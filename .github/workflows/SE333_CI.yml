@@ -1,0 +1,34 @@
+name: SE333_CI
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  SE333_CI_JOB:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout-repo
+        uses: actions/checkout@v4
+
+      - name: setupJava
+        uses: actions/setup-java@v4
+        with:
+          java-version: '21'
+          distribution: 'temurin'
+          architecture: x64
+
+      - name: Install Linter
+        ##TODO
+
+      - name: Run Checkstyle
+        ##TODO
+
+      - name: Upload Checkstyle Result
+        ##TODO
+
+      - name: Run Maven Test
+        ##TODO
+
+      - name: Jacoco Report
+        ##TODO
