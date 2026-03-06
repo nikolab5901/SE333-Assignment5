@@ -16,11 +16,11 @@ Manual UI testing in playwright was difficult, yet very intuitive. The program w
 
 
 ## AI-assisted UI testing: You prompted the MCP agent to generate Playwright tests. 
-# You can compare aspects like: 
-# - Ease of writing and running tests
-# - Accuracy and reliability of generated tests
-# - Maintenance effort
-# - Limitations or issues you encountered
+You can compare aspects like: 
+- Ease of writing and running tests
+- Accuracy and reliability of generated tests
+- Maintenance effort
+- Limitations or issues you encountered
 
 Using the AI-assisted UI testing with the MCP agent was a lot more difficult, so much so that I do not think I was able to succsessfuly implement it. I installed Node.js, as well as the playwright add-ons and MCP tools and prompted the agents to use them, but after creating the tests every time it was ran an error had occurd. I would try to explain what the error was to the LLM, but even after that errors would occur. Because of this I was not able to get a succsessful video run. 
 
