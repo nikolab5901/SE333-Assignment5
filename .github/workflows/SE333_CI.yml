@@ -38,3 +38,9 @@ jobs:
         with:
           name: jacoco.xml
           path: target/site/jacoco/jacoco.xml
+
+      - name: Install Playwright Browsers
+        run: mvn exec:java -e -D exec.mainClass=com.microsoft.playwright.CLI -D exec.args="install --with-deps"
+
+      - name: Run Maven Test
+        run: mvn test jacoco:report
