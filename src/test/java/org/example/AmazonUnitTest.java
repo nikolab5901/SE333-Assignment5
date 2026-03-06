@@ -5,7 +5,6 @@ import org.example.Amazon.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import org.mockito.Mockito;
 
 import java.util.Arrays;
 import java.util.List;
@@ -18,7 +17,6 @@ public class AmazonUnitTest {
     private ShoppingCart mockCart;
     private PriceRule mockRule1;
     private PriceRule mockRule2;
-    private PriceRule mockRule3;
     private Amazon amazon;
 
     @BeforeEach

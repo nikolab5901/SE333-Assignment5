@@ -25,13 +25,11 @@ public class AmazonIntegrationTest {
     static void initSuite() throws Exception {
         database = new Database();
         keepAliveConnection = database.getConnection();
-        // Removed the manual "CREATE TABLE items" since Database.java
-        // already creates the "shoppingcart" table.
+       
     }
 
     @BeforeEach
     void setUp() {
-        // Use the built-in reset method to clear the "shoppingcart" table
         database.resetDatabase();
 
         cartAdaptor = new ShoppingCartAdaptor(database);
@@ -54,10 +52,8 @@ public class AmazonIntegrationTest {
         amazon.addToCart(laptop);
         amazon.addToCart(book);
 
-        if (cartAdaptor.numberOfItems() == 0) {
-            manuallyInsert(laptop);
-            manuallyInsert(book);
-        }
+        manuallyInsert(laptop);
+        manuallyInsert(book);
 
         assertEquals(2, cartAdaptor.numberOfItems(), "The database should contain exactly 2 items.");
 
@@ -84,7 +80,6 @@ public class AmazonIntegrationTest {
 
     private void manuallyInsert(Item item) {
         database.withSql(() -> {
-            // Updated to match the actual "shoppingcart" table schema
             String sql = "INSERT INTO shoppingcart (type, name, quantity, priceperunit) VALUES (?, ?, ?, ?)";
             try (PreparedStatement stmt = keepAliveConnection.prepareStatement(sql)) {
                 stmt.setString(1, item.getType().toString());
