@@ -35,6 +35,6 @@ jobs:
 
       - name: Jacoco Report
         uses: actions/upload-artifact@v4
-                - with:
-                name: jacoco.xml
-                path: target/site/jacoco/jacoco.xml
+        with:
+          name: jacoco.xml
+          path: target/site/jacoco/jacoco.xml
